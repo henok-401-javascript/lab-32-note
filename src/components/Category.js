@@ -18,7 +18,7 @@ for(let i = 0; i < props.category.length; i++){
 
   selectedCategory.push(<Button key={i} variant="contained" color="secondary" onClick={getCategories}>{props.category[i].categoryDisplayName}</Button>)
 }
-console.log('push value', selectedCategory);
+
 return (
   <div>
 {selectedCategory}

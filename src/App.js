@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Category from './components/Category';
+import Product from './components/Products';
 import {Provider} from 'react-redux';
 import { Container } from '@material-ui/core';
 import store from './store';
@@ -14,6 +15,7 @@ function App() {
       <Container>
         <Header/>
         <Category/>
+        <Product/>
       </Container>
     </Provider>
   );
