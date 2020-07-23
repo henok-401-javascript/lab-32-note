@@ -1,18 +1,27 @@
 import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
+import { Button } from '@material-ui/core';
 import * as actions from '../store/storeAction';
 
 
 function Category(props){
-console.log('category',props);
+
+const {getCategories , addCategories} = props;
+
+let selectedCategory = [];
 
 useEffect(() =>{
-  changeCategory();
-},[])
+  getCategories();
+},[getCategories])
 
+for(let i = 0; i < props.category.length; i++){
+
+  selectedCategory.push(<Button key={i} variant="contained" color="secondary" onClick={getCategories}>{props.category[i].categoryDisplayName}</Button>)
+}
+console.log('push value', selectedCategory);
 return (
   <div>
-
+{selectedCategory}
   </div>
 )
 }
@@ -20,12 +29,13 @@ return (
 const mapToStateProps = (state) =>{
 
    return{
-     category:state.categories.category,
+     category:state.categories.categoryList,
    }
 }
 
 const mapToDispatchProps = (dispatch, getState) =>({
- changeCategory :(data) => dispatch(actions.changeCategory(data)),
+  getCategories :(data) => dispatch(actions.getCategories(data)),
+  addCategories:(data) => dispatch(actions.addCategories(data)),
 })
 
 

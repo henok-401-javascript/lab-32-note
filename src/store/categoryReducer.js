@@ -13,7 +13,15 @@ console.log('new place',newState);
     case 'CHANGE-CATEGORY':
       newState.categoryList = action.payload;
       break;
-      default:
+      
+    case 'ADD_CATEGORY':
+      newState.categoryList.push(action.payload);
+      break;
+
+    default:
+      break;
+    
+
   }
 
   return newState;
