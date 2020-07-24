@@ -1,7 +1,7 @@
 
 
 const initState = {
-  currentCategory : '',
+  currentCategory : 'Electronics',
    categoryList :[],
 }
 
@@ -13,6 +13,9 @@ const reducer = (state = initState , action) =>{
     case 'CHANGE-CATEGORY':
       newState.categoryList = action.payload;
       break;
+    case 'RUN_CATEGORY':
+          newState.currentCategory = action.payload;
+          break;
 
     case 'ADD_CATEGORY':
       newState.categoryList.push(action.payload);

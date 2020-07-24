@@ -37,4 +37,9 @@ export const addProducts = payload =>{
     payload,
   }
 }
-
+export const runCategory = (payload) =>{
+  return{
+    type:'RUN_CATEGORY',
+    payload,
+  }
+}

@@ -6,17 +6,22 @@ import * as actions from '../store/storeAction';
 
 function Category(props){
 
-const {getCategories , addCategories} = props;
+const {getCategories , runCategory} = props;
 
 let selectedCategory = [];
-
+console.log('select',selectedCategory);
 useEffect(() =>{
   getCategories();
 },[getCategories])
 
-for(let i = 0; i < props.category.length; i++){
+for(let i = 0; i < props.categories.length; i++){
 
-  selectedCategory.push(<Button key={i} variant="contained" color="secondary" onClick={getCategories}>{props.category[i].categoryDisplayName}</Button>)
+  selectedCategory.push(<Button key={i} variant="contained" color="secondary"
+   onClick={() =>{
+     runCategory(props.categories[i].categoryDisplayName);
+    }}
+   >
+     {props.categories[i].categoryDisplayName}</Button>)
 }
 
 return (
@@ -29,13 +34,13 @@ return (
 const mapToStateProps = (state) =>{
 
    return{
-     category:state.categories.categoryList,
+    categories:state.categories.categoryList,
    }
 }
 
 const mapToDispatchProps = (dispatch, getState) =>({
-  getCategories :(data) => dispatch(actions.getCategories(data)),
-  addCategories:(data) => dispatch(actions.addCategories(data)),
+  runCategory :(payload) => dispatch(actions.runCategory(payload)),
+  getCategories:(data) => dispatch(actions.getCategories(data)),
 })
 
 
