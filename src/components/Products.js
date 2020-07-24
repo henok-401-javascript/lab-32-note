@@ -19,13 +19,13 @@ if(product[i].category === currentCategory){
     <div key={product[i]._id}>
       <img  src={product[i].img} alt=""/>
           <h2>{product[i].name}</h2>
-    {/* <Button variant="contained" color="primary"
+    <Button variant="contained" color="primary"
     onClick={
-      addProducts(props.category[i].name)
+      addProducts(product[i].name)
     }
     >
 ADD TO CART
-    </Button> */}
+    </Button>
     </div>
   )
   }
