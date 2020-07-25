@@ -12,7 +12,6 @@ useEffect(() =>{
 }, [getProducts])
 
 
-
 for(let i = 0; i < product.length;i++){
 if(product[i].category === currentCategory){
   listCategory.push(
@@ -30,6 +29,7 @@ ADD TO CART
   )
   }
 }
+
 console.log('what do i have',listCategory);
     return (
       <div>
