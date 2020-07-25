@@ -12,7 +12,7 @@ import './style/style.scss';
 function App() {
   return (
     <Provider store={store}>
-      <Container>
+      <Container maxWidth="sm">
         <Header/>
         <Category/>
         <Product/>
